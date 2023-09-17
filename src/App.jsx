@@ -3,7 +3,7 @@ import React from 'react'
 const App = () => {
   return (
     <div>
-      Kreebi Hotel
+      <h1>this is just for test</h1>
     </div>
   )
 }
