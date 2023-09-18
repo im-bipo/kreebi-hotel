@@ -4,18 +4,34 @@ import React from 'react'
 
 import './NavBar.css'
 const NavBar = () => {
+
+    //add or remove ham menu with css class
     const handleHam = () =>{
-        console.log("clicked");
-        document.getElementById('NavLists').classList.toggle('open')
-        document.getElementById('ham-menu').classList.toggle('open')
+        document.getElementById('nav').classList.toggle('expendedNav')
     }
+
+
+    // handle nav remove without x 
+    let remove = true
+    const NavBox = () => {
+        remove = false
+    }
+    const BodyBox = () =>{
+        if(remove){
+            handleHam()
+        }
+        remove = true
+
+        
+}
   return (
-    <nav className='nav'>
+    <nav className='nav' id='nav'>
         <h1 className='Logo'>
             Kreebi
         </h1>
-        <div id='NavLists' className='NavLists'>
-        <ul className='Lists'>
+        <div id='NavLists' className='NavLists ' onClick={() => BodyBox()}>
+        <ul className='Lists' onClick={() => NavBox()}>
+            <h2 className='sm-nav-title'>Hotle Kreebi</h2>
             <li className='list'>
                 <a href="/" onClick={handleHam}>Home</a>
             </li>
@@ -24,6 +40,15 @@ const NavBar = () => {
             </li>
             <li className='list'>
                 <a href="#contact" onClick={handleHam}>Contact</a>
+            </li>
+            <li className='list'>
+                <a href="#blog" onClick={handleHam}>blog</a>
+            </li>
+            <li className='list'>
+                <a href="#blog" onClick={handleHam}>blog</a>
+            </li>
+            <li className='list'>
+                <a href="#blog" onClick={handleHam}>blog</a>
             </li>
             <li className='list'>
                 <a href="#blog" onClick={handleHam}>blog</a>

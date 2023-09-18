@@ -19,7 +19,12 @@
     display: flex;
     text-align: center;
 }
-
+.NavLists .sm-nav-title{
+    display: none;
+}
+.NavLists .list {
+    margin: 0 1rem;
+}
 .nav .Contact-btn {
     width: 20%;
     min-width: 100px;
@@ -51,10 +56,9 @@
     nav {
         background-attachment: fixed;
     }
-
-    .NavLists {
+.NavLists {
         width: 100vw;
-        height: 100vh;
+        height: 0;
         position: fixed;
         left: 0;
         top: 0;
@@ -63,22 +67,40 @@
         justify-content: center;
         align-items: flex-end;
         transform: translateX(20rem);
-        transition: transform .5s  cubic-bezier(0.65, 0.05, 0.36, 1);;
+        transition: all .5s  cubic-bezier(0.65, 0.05, 0.36, 1);;
     }
-    
     .NavLists .Lists {
         display: block;
         background-color: rgb(226, 226, 226);
         padding: 3rem 5rem 0;
         height: 100vh;
         width: 15rem;
+        overflow: auto;
+        overflow-y: visible;
+    }
+    .NavLists .sm-nav-title{
+        display: block;
+        font-size: medium;
+        font-weight: bold;
+    }
+    .NavLists .Lists::before{
+        content: "";
+        background: 
+        url(../../public/kreebi.svg)
+        no-repeat
+        center / 50px 50px
+        ;
+        height: 50px;
+        display: inline-block;
+        width: 50px;
     }
     .NavLists .list {
         margin-top: 7vh;
     }
-
-    .NavLists.open {
+    
+    .expendedNav .NavLists {
         transform: translateX(0%);
+        height: 100vh;
     }
     .en-btn{
         width: 80%;
@@ -95,13 +117,13 @@
         transition: all .7s;
         transform: rotate(0deg);
     }
-    .ham-menu.open .ham-bar-1{
+    .expendedNav .ham-menu .ham-bar-1{
         transform: rotate(45deg);
     }
-    .ham-menu.open .ham-bar-2{
+    .expendedNav .ham-menu .ham-bar-2{
         width: 0;
     }
-    .ham-menu.open .ham-bar-3{
+    .expendedNav .ham-menu .ham-bar-3{
         transform: rotate(-45deg) translateY(-10px) translateX(10px);
     }
 }
