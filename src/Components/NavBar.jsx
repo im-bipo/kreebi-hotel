@@ -53,7 +53,9 @@ const NavBar = () => {
             </h1>
             <div id='NavLists' className='NavLists ' onClick={() => BodyBox()}>
                 <div className='Lists-container' onClick={() => NavBox()}>
+                    <div className='sm-nav-container'>
                     <h2 className='sm-nav-title'>Hotle Kreebi</h2>
+                    </div>
 
                     <ul className='Lists'>
 
