@@ -14,7 +14,8 @@ const NavBar = () => {
         <h1 className='Logo'>
             Kreebi
         </h1>
-        <ul id='NavLists' className='NavLists'>
+        <div id='NavLists' className='NavLists'>
+        <ul className='Lists'>
             <li className='list'>
                 <a href="/" onClick={handleHam}>Home</a>
             </li>
@@ -28,6 +29,7 @@ const NavBar = () => {
                 <a href="#blog" onClick={handleHam}>blog</a>
             </li>
         </ul>
+        </div>
         <div className="en-btn">
         <div className='Contact-btn'>
 

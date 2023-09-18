@@ -15,13 +15,14 @@
     width: 60%;
     justify-content: center;
 }
-
-.NavLists .list {
-    padding: 0 .75rem;
+.NavLists .Lists{
+    display: flex;
+    text-align: center;
 }
 
 .nav .Contact-btn {
     width: 20%;
+    min-width: 100px;
 }
 
 .nav .Contact-btn button {
@@ -52,8 +53,6 @@
     }
 
     .NavLists {
-        background-color: rgb(72, 72, 72);
-        color: white;
         width: 100vw;
         height: 100vh;
         position: fixed;
@@ -62,32 +61,47 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
-        transform: translateX(100%);
-        transition: transform .5s ease;
+        align-items: flex-end;
+        transform: translateX(20rem);
+        transition: transform .5s  cubic-bezier(0.65, 0.05, 0.36, 1);;
+    }
+    
+    .NavLists .Lists {
+        display: block;
+        background-color: rgb(226, 226, 226);
+        padding: 3rem 5rem 0;
+        height: 100vh;
+        width: 15rem;
     }
     .NavLists .list {
-        margin-top: clamp(20px, 12vh, 70px);
+        margin-top: 7vh;
     }
 
     .NavLists.open {
         transform: translateX(0%);
     }
     .en-btn{
-        /* flex-direction: row; */
         width: 80%;
         display: flex;
-        justify-content: end;
+        justify-content: flex-end;
         align-items: center;
     }
     .ham-menu {
-        margin-left: 1rem;
         display: block;
         z-index: 10;
         margin-right: 0;
-        transition: all 1s;
+    }
+    .ham-menu .ham-bar{
+        transition: all .7s;
+        transform: rotate(0deg);
+    }
+    .ham-menu.open .ham-bar-1{
+        transform: rotate(45deg);
     }
     .ham-menu.open .ham-bar-2{
-        display: none;
+        width: 0;
+    }
+    .ham-menu.open .ham-bar-3{
+        transform: rotate(-45deg) translateY(-10px) translateX(10px);
     }
 }
