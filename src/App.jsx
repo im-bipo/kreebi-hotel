@@ -5,7 +5,15 @@ const App = () => {
   return (
     <div>
       <NavBar/>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti commodi ullam nisi maiores inventore repellat praesentium est! Deleniti, necessitatibus corrupti. lorem40</p>
+     <div className='h-[50rem] bg-[url("./assets/images/main-banner.jpg")] bg-cover bg-center bg-no-repeat pt-20'>Lander</div>
+     <div className='h-[32rem] bg-blue-300'>about</div>
+     <div className='h-[32rem] bg-blue-200'>spa</div>
+     <div className='h-[32rem] bg-blue-300'>Restruant and Bar</div>
+     <div className='h-[32rem] bg-blue-200'>Advntages</div>
+     <div className='h-[32rem] bg-blue-300'>Rooms</div>
+     <div className='h-[32rem] bg-blue-200'>meter</div>
+     <div className='h-[32rem] bg-blue-300'>testimonial</div>
+     <div className='h-[32rem] bg-blue-200'>footer</div>
     </div>
   )
 }

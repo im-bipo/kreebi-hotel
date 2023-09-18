@@ -1,11 +1,18 @@
 .nav {
-    padding: 1.25rem;
+    padding:1.25rem;
     display: flex;
     align-items: center;
+    position: fixed;
+    width: 100vw;
+    color: white;
+    transition: all .4s cubic-bezier(0.68, -0.55, 0.27, 1.55);;
 }
-
+.nav.solid-background{
+    padding: .5rem  1.25rem;
+    background-color: #29434e;
+}
 .Logo {
-    font-size: 1.875rem;
+    font-size: 1.5rem;
     line-height: 2.25rem;
     width: 20%;
 }
@@ -17,13 +24,27 @@
 }
 .NavLists .Lists{
     display: flex;
-    text-align: center;
 }
+
 .NavLists .sm-nav-title{
     display: none;
 }
 .NavLists .list {
     margin: 0 1rem;
+    cursor: pointer;
+}
+.NavLists .list::after{
+    content: "";
+    width: 0;
+    height: 2px;
+    display: block;
+    position: unset ;
+    transition: all .3s;
+    border-radius: 20rem;
+    background-color: white;
+}
+.NavLists .list:hover::after{
+    width: calc(100% - 10px);
 }
 .nav .Contact-btn {
     width: 20%;
@@ -31,10 +52,17 @@
 }
 
 .nav .Contact-btn button {
-    border: 1px rgb(75 85 99) solid;
+    border: 1px #fff solid;
     border-radius: .75rem;
     padding: 0 .75rem;
 }
+.nav .Contact-btn button:hover {
+    background-color: #e1e1e117;
+}
+.nav .Contact-btn button:active {
+    background-color: #e1e1e130;
+}
+
 
 .ham-menu {
     display: none;
@@ -42,8 +70,8 @@
 
 .ham-bar {
     margin-right: 0px;
-    background-color: black;
-    height: 4px;
+    background-color: rgb(255, 255, 255);
+    height: 3px;
     width: 1.5rem;
     margin: 5px;
     border-radius: 5rem;
@@ -70,6 +98,9 @@
         transition: all .5s  cubic-bezier(0.65, 0.05, 0.36, 1);;
     }
     .NavLists .Lists {
+        flex-direction: column;
+    }
+    .NavLists .Lists-container {
         display: block;
         background-color: rgb(226, 226, 226);
         padding: 3rem 5rem 0;
@@ -83,7 +114,7 @@
         font-size: medium;
         font-weight: bold;
     }
-    .NavLists .Lists::before{
+    .NavLists .Lists-container::before{
         content: "";
         background: 
         url(../../public/kreebi.svg)
@@ -122,6 +153,7 @@
     }
     .expendedNav .ham-menu .ham-bar-2{
         width: 0;
+        background-color: unset;
     }
     .expendedNav .ham-menu .ham-bar-3{
         transform: rotate(-45deg) translateY(-10px) translateX(10px);
