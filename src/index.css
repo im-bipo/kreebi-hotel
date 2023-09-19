@@ -1,10 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+/* 
 *{
     font-family: 'Ubuntu', sans-serif;
-}
+} */
 ::-webkit-scrollbar {
     width: 3px;
     margin: 5px;

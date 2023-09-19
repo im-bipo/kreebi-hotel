@@ -1,11 +1,12 @@
 import React from 'react'
 import NavBar from './Components/NavBar'
+import HeroLander from './Components/HeroLander'
 
 const App = () => {
   return (
     <div>
       <NavBar/>
-     <div className='h-[50rem] bg-[url("./assets/images/main-banner.jpg")] bg-cover bg-center bg-no-repeat pt-20'>Lander</div>
+      <HeroLander/>
      <div className='h-[32rem] bg-blue-300'>about</div>
      <div className='h-[32rem] bg-blue-200'>spa</div>
      <div className='h-[32rem] bg-blue-300'>Restruant and Bar</div>

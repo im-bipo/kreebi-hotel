@@ -28,7 +28,7 @@ const NavBar = () => {
         const [Navstatus, setNavstatus] = useState('')
         
         window.onscroll= ()=>{
-            if (window.scrollY < 200){
+            if (window.scrollY < 20){
                 setNavstatus('no-bg')
             }
             else{
