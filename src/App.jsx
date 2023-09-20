@@ -7,7 +7,7 @@ const App = () => {
     <div>
       <NavBar/>
       <HeroLander/>
-     <div className='h-[32rem] bg-blue-300'>about</div>
+     <div className='h-[32rem] bg-blue-300'></div>
      <div className='h-[32rem] bg-blue-200'>spa</div>
      <div className='h-[32rem] bg-blue-300'>Restruant and Bar</div>
      <div className='h-[32rem] bg-blue-200'>Advntages</div>
