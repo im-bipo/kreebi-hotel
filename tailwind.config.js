@@ -13,7 +13,8 @@ export default {
       colors :{
       primary:'#2d4765ff',
       primaryDark:'#1b2e45',
-      active: '#c8ff8d'
+      active: '#c8ff8d',
+      Active:'#95C561',
       }
     },
   },
