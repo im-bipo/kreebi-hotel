@@ -22,6 +22,7 @@ const DateBooking = () => {
         setItemType(null)
     }
 
+    // set weather is going to update check in or out
     const handelDateInput = (e) => {
         setItemType(e)
     }
@@ -77,7 +78,7 @@ const DateBooking = () => {
 
                     </div>
                 </div>
-                <SelectDate iType={ItemType} getData={getNewData} />
+                <SelectDate checkInDate={CheckInDate} iType={ItemType} getData={getNewData} />
             </div>
         </>
     )
