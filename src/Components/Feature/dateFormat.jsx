@@ -1,4 +1,4 @@
-const dateFormat = (date) => {
+export const dateFormat = (date) => {
     const tempDay = date.getDay();
     let day;
     const tempMonth = date.getMonth();
@@ -99,4 +99,3 @@ const dateFormat = (date) => {
     }
     return FormatedDate
 }
-export default dateFormat

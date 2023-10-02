@@ -4,26 +4,35 @@ import 'react-datepicker/dist/react-datepicker.css'
 const SelectDate = (props) => {
     const ItemType = props.iType
     const CheckInDate = props.checkInDate
+
+    const today = new Date
     const [dateError, setDateError] = useState('')
     const [startDate, setStartDate] = useState(new Date());
     
     //callback function to send new date to parent element
     const handleChange = (date) =>{
-        if(ItemType === 'Check Out')
+        switch(ItemType)
         {
-            if(CheckInDate.getFullYear()*10000+CheckInDate.getMonth()*100+CheckInDate.getDate()<= date.getFullYear()*10000+date.getMonth()*100+date.getDate()){
+            case 'Check Out' :
+            if(CheckInDate<= date){
                 setStartDate(date)
             }
             else{
                 setDateError('!!! Invalid Date !!!')
             }
-        }
-        else{
-            setStartDate(date)
+            break;
+        
+        
+            case 'Check In' :
+                if(today.getMonth()*100+today.getDate()<=date.getMonth()*100+date.getDate())
+                {
+                    setStartDate(date)
+                }
+                else{
+                    setDateError('!!! Invalid Date !!!')
+                }
         }
     }
-
-
     
     useEffect(
         () => {

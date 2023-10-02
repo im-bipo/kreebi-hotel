@@ -1,14 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import 'react-datepicker/dist/react-datepicker.css'
 
-import './dateFormat'
+import {dateFormat} from './dateFormat'
 import SelectDate from './SelectDate'
-import dateFormat from './dateFormat'
+import NoOfPeople from './NoOfPeople'
 const DateBooking = () => {
 
     const [CheckInDate, setCheckInDate] = useState(new Date());
     const [CheckOutDate, setCheckOutDate] = useState(new Date()); 
-    
+    const [Adult, setAdult] = useState ()
+    const [Child, setChild] = useState ()
+
+    const getPeople = (a,c) =>{
+        setAdult(a)
+        setChild(c)
+    }
+
     const [ItemType, setItemType] = useState('')
 
 
@@ -17,6 +24,7 @@ const DateBooking = () => {
         if(type === 'Check In')
         {
             setCheckInDate(newDate)
+            setCheckOutDate(newDate)
         }
         else if (type ==='Check Out')
         {
@@ -34,12 +42,10 @@ const DateBooking = () => {
     const checkIN = dateFormat(CheckInDate)
     const checkOut = dateFormat(CheckOutDate)
 
-    console.log(checkIN , checkOut)
-
     return (
         <>
             <div className='flex justify-center lg:items-center md:justify-end lg:block box-content'>
-                <div className='flex max-w-[26rem] flex-wrap mt-14 bg-gradient-to-b from-primaryDark to-[#101E2F] rounded-2xl lg:max-w-none '>
+                <div className='flex max-w-[30rem] flex-wrap mt-14 bg-gradient-to-b from-primaryDark to-[#101E2F] rounded-2xl lg:max-w-none '>
                     <div onClick={() => { handelDateInput('Check In') }} className=' w-full  p-5 border-b  border-primary sm:border-r sm:w-1/2 lg:w-1/4 flex flex-col justify-center lg:border-b-0'>
                         <h3 className='uppercase text-gray-300 text-sm mb-5'>Check IN</h3>
                         <div className='flex items-center  text-gray-200 p-5 rounded-md cursor-pointer hover:bg-[#1a2c43] active:bg-[#1a2c43]'>
@@ -61,22 +67,7 @@ const DateBooking = () => {
                         </div>
                     </div>
                     <div className='p-5 m-auto lg:w-1/4 flex justify-center  border-r border-primary'>
-                        <div className='w-fit  py-5 text-center '>
-                            <h6>Adults</h6>
-                            <div className='flex justify-center items-center p-5 space-x-2 text-2xl'>
-                                <button>+</button>
-                                <h5 className='text-[3rem]'>5</h5>
-                                <button>-</button>
-                            </div>
-                        </div>
-                        <div className='w-fit  py-5 text-center'>
-                            <h6>Children</h6>
-                            <div className='flex justify-center items-center p-5 space-x-2 text-2xl'>
-                                <button>+</button>
-                                <h5 className='text-[3rem]'>5</h5>
-                                <button>-</button>
-                            </div>
-                        </div>
+                        <NoOfPeople PeopleB={getPeople}/>
                     </div>
                     <div className=' lg:w-1/4 flex justify-center'>
                         <div className=' p-5 flex m-auto h-full items-center justify-center'>
