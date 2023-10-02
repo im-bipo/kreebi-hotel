@@ -24,7 +24,11 @@ const DateBooking = () => {
         if(type === 'Check In')
         {
             setCheckInDate(newDate)
-            setCheckOutDate(newDate)
+
+            if(CheckOutDate<newDate)
+            {
+                setCheckOutDate(newDate)
+            }
         }
         else if (type ==='Check Out')
         {
