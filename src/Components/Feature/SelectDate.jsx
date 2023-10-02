@@ -22,6 +22,8 @@ const SelectDate = (props) => {
             setStartDate(date)
         }
     }
+
+
     
     useEffect(
         () => {
@@ -33,6 +35,7 @@ const SelectDate = (props) => {
             document.getElementById('DatePickerContainer').classList.add('hidden')
             setDateError('')
             //to reset type of item so we can reselect the same element
+
             props.getData(ItemType , startDate);
     }
 
@@ -51,7 +54,7 @@ const SelectDate = (props) => {
                            <p>
                              Select your {ItemType} date 
                             </p>
-                            <p className='text-center text-red-500'>
+                            <p className='text-center text-[red]'>
                              {dateError}
                             </p>
                         </div>

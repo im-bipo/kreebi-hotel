@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import SelectDate from './SelectDate'
 import 'react-datepicker/dist/react-datepicker.css'
+
+import './dateFormat'
+import SelectDate from './SelectDate'
+import dateFormat from './dateFormat'
 const DateBooking = () => {
 
     const [CheckInDate, setCheckInDate] = useState(new Date());
@@ -27,6 +30,12 @@ const DateBooking = () => {
         setItemType(e)
     }
 
+
+    const checkIN = dateFormat(CheckInDate)
+    const checkOut = dateFormat(CheckOutDate)
+
+    console.log(checkIN , checkOut)
+
     return (
         <>
             <div className='flex justify-center lg:items-center md:justify-end lg:block box-content'>
@@ -34,20 +43,20 @@ const DateBooking = () => {
                     <div onClick={() => { handelDateInput('Check In') }} className=' w-full  p-5 border-b  border-primary sm:border-r sm:w-1/2 lg:w-1/4 flex flex-col justify-center lg:border-b-0'>
                         <h3 className='uppercase text-gray-300 text-sm mb-5'>Check IN</h3>
                         <div className='flex items-center  text-gray-200 p-5 rounded-md cursor-pointer hover:bg-[#1a2c43] active:bg-[#1a2c43]'>
-                            <h6 className=' w-fit text-5xl mx-2'>{CheckInDate.getDate()}</h6>
+                            <h6 className=' w-fit text-5xl mx-2'>{checkIN.mDay}</h6>
                             <div className='flex flex-col'>
-                                <p className='w-fit text-sm'>{CheckInDate.getMonth()}  {CheckInDate.getFullYear()}</p>
-                                <p className=' w-fit text-gray-400 text-base'>{CheckInDate.getDay()}</p>
+                                <p className='w-fit text-sm'>{checkIN.month}  {checkIN.year}</p>
+                                <p className=' w-fit text-gray-400 text-base'>{checkIN.day}</p>
                             </div>
                         </div>
                     </div>
                     <div onClick={() => { handelDateInput('Check Out') }} className='w-full p-5 border-b border-primary sm:w-1/2 lg:border-b-0 lg:border-r lg:w-1/4 flex flex-col justify-center'>
                         <h3 className='uppercase text-gray-300 text-sm mb-5'>Check Out</h3>
                         <div className='flex items-center  text-gray-200 p-5 rounded-md cursor-pointer hover:bg-[#1a2c43] active:bg-[#1a2c43]'>
-                            <h6 className=' w-fit text-5xl mx-2'>{CheckOutDate.getDate()}</h6>
+                            <h6 className=' w-fit text-5xl mx-2'>{checkOut.mDay}</h6>
                             <div className='flex flex-col'>
-                                <p className='w-fit text-sm'>{CheckOutDate.getMonth()}  {CheckOutDate.getFullYear()}</p>
-                                <p className=' w-fit text-gray-400 text-base'>{CheckOutDate.getDay()}</p>
+                                <p className='w-fit text-sm'>{checkOut.month}  {checkOut.year}</p>
+                                <p className=' w-fit text-gray-400 text-base'>{checkOut.day}</p>
                             </div>
                         </div>
                     </div>
