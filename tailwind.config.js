@@ -11,9 +11,11 @@ export default {
     },
     extend: {
       colors :{
-      primary:'#2d4765ff',
+      primary:'#2f4664',
       primaryDark:'#1b2e45',
       active: '#c8ff8d',
+      stdBgOne : '#ecf0f7',
+      stdBgTwo : '#fefeff',
       Active:'#95C561',
       }
     },

@@ -2,6 +2,8 @@ import React from 'react'
 import NavBar from './Components/NavBar/NavBar'
 import HeroLander from './Components/HeroLander'
 import AboutUs from './Components/AboutUs'
+import Spa from './Components/Spa'
+import ResturantAndBar from './Components/ResturantAndBar'
 
 const App = () => {
   return (
@@ -9,6 +11,8 @@ const App = () => {
       <NavBar />
       <HeroLander />
       <AboutUs/>
+      <Spa/>
+      <ResturantAndBar/>
       <div className='h-[32rem] bg-blue-300'></div>
       <div className='h-[32rem] bg-blue-200'>
 
