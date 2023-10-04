@@ -1,13 +1,14 @@
 import React from 'react'
-import NavBar from './Components/NavBar'
+import NavBar from './Components/NavBar/NavBar'
 import HeroLander from './Components/HeroLander'
-import Test from './Components/Test'
+import AboutUs from './Components/AboutUs'
+
 const App = () => {
   return (
     <div>
       <NavBar />
       <HeroLander />
-      <Test/>
+      <AboutUs/>
       <div className='h-[32rem] bg-blue-300'></div>
       <div className='h-[32rem] bg-blue-200'>
 

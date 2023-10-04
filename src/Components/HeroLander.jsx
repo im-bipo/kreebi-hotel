@@ -1,5 +1,5 @@
 import React from 'react'
-import DateBooking from './Feature/DateBooking'
+import DateBooking from './BookingFeature/DateBooking'
 
 const HeroLander = () => {
   return (
