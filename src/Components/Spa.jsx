@@ -5,7 +5,7 @@ const Spa = () => {
 
     return (
         <>
-            <div className='bg-stdBgTwo px-3 py-20 flex flex-col md:flex-row'>
+            <div className='bg-stdBgTwo px-3 pt-20 md:pb-20 flex flex-col md:flex-row'>
                 <div className='w-full h-[30rem] rounded-[2rem]  shadow-lg max-w-lg m-auto md:w-1/2 '>
                     <div>
                         <img id='kreebiHotelVideo' src={spaImg} width="750" height="500" className='rounded-t-[2rem] h-[24rem] object-cover infinity'>

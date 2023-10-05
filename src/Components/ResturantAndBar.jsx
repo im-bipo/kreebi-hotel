@@ -9,7 +9,7 @@ const AboutUs = () => {
 
     return (
         <>
-            <div className='bg-stdBgOne px-3 py-20 flex flex-col md:flex-row'>
+            <div className='bg-stdBgOne px-3 pb-20 md:pt-20 flex flex-col md:flex-row'>
                 <div className='flex flex-col max-w-lg m-auto md:w-1/2 md:pl-5'>
                     <div className='my-10'>
                         <IoRestaurantOutline className='text-primary text-[4rem] rounded-lg border border-gray-300  p-2' />

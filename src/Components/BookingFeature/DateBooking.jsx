@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import 'react-datepicker/dist/react-datepicker.css'
 
-import {dateFormat} from './dateFormat'
+import { dateFormat } from './dateFormat'
 import SelectDate from './SelectDate'
 import NoOfPeople from './NoOfPeople'
 const DateBooking = () => {
 
     const [CheckInDate, setCheckInDate] = useState(new Date());
-    const [CheckOutDate, setCheckOutDate] = useState(new Date()); 
-    const [Adult, setAdult] = useState ()
-    const [Child, setChild] = useState ()
+    const [CheckOutDate, setCheckOutDate] = useState(new Date());
+    const [Adult, setAdult] = useState()
+    const [Child, setChild] = useState()
 
-    const getPeople = (a,c) =>{
+    const getPeople = (a, c) => {
         setAdult(a)
         setChild(c)
     }
@@ -20,18 +20,15 @@ const DateBooking = () => {
 
 
     //callback function to get new date form child element
-    const getNewData = (type,newDate) =>{
-        if(type === 'Check In')
-        {
+    const getNewData = (type, newDate) => {
+        if (type === 'Check In') {
             setCheckInDate(newDate)
 
-            if(CheckOutDate<newDate)
-            {
+            if (CheckOutDate < newDate) {
                 setCheckOutDate(newDate)
             }
         }
-        else if (type ==='Check Out')
-        {
+        else if (type === 'Check Out') {
             setCheckOutDate(newDate)
         }
         setItemType(null)
@@ -48,11 +45,11 @@ const DateBooking = () => {
 
     return (
         <>
-            <div className='flex justify-center lg:items-center md:justify-end lg:block box-content'>
-                <div className='flex max-w-[30rem] flex-wrap mt-14 bg-gradient-to-b from-primaryDark to-[#101E2F] rounded-2xl lg:max-w-none '>
-                    <div onClick={() => { handelDateInput('Check In') }} className=' w-full  p-5 border-b  border-primary sm:border-r sm:w-1/2 lg:w-1/4 flex flex-col justify-center lg:border-b-0'>
-                        <h3 className='uppercase text-gray-300 text-sm mb-5'>Check IN</h3>
-                        <div className='flex items-center  text-gray-200 p-5 rounded-md cursor-pointer hover:bg-[#1a2c43] active:bg-[#1a2c43]'>
+            <div className='relative z-10 mt-12 flex justify-center  lg:items-center sm:justify-end lg:mt-64 lg:block box-content'>
+                <div className='flex max-w-[25rem] flex-wrap mt-14 bg-gradient-to-b shadow-2xl from-primaryDark to-[#101E2F] rounded-2xl lg:max-w-none '>
+                    <div onClick={() => { handelDateInput('Check In') }} className='w-full  p-5 border-b  border-primary sm:border-r sm:w-1/2 lg:w-1/4 flex flex-col lg:items-center justify-center lg:border-b-0'>
+                        <h3 className='uppercase text-gray-300 text-sm mb-5 lg:relative lg:mb-0 lg:right-8 lg:mt-4'>Check IN</h3>
+                        <div className='flex items-center  text-gray-200 p-5 lg:pt-2 rounded-md cursor-pointer hover:bg-[#1a2c43] active:bg-[#1a2c43]'>
                             <h6 className=' w-fit text-5xl mx-2'>{checkIN.mDay}</h6>
                             <div className='flex flex-col'>
                                 <p className='w-fit text-sm'>{checkIN.month}  {checkIN.year}</p>
@@ -60,9 +57,9 @@ const DateBooking = () => {
                             </div>
                         </div>
                     </div>
-                    <div onClick={() => { handelDateInput('Check Out') }} className='w-full p-5 border-b border-primary sm:w-1/2 lg:border-b-0 lg:border-r lg:w-1/4 flex flex-col justify-center'>
-                        <h3 className='uppercase text-gray-300 text-sm mb-5'>Check Out</h3>
-                        <div className='flex items-center  text-gray-200 p-5 rounded-md cursor-pointer hover:bg-[#1a2c43] active:bg-[#1a2c43]'>
+                    <div onClick={() => { handelDateInput('Check Out') }} className='w-full p-5 border-b border-primary sm:w-1/2 lg:border-b-0 lg:border-r lg:w-1/4 flex flex-col lg:items-center justify-center'>
+                        <h3 className='uppercase text-gray-300 text-sm mb-5 lg:relative lg:mb-0 lg:right-8 lg:mt-4'>Check Out</h3>
+                        <div className='flex items-center  text-gray-200 p-5 lg:pt-2 rounded-md cursor-pointer hover:bg-[#1a2c43] active:bg-[#1a2c43]'>
                             <h6 className=' w-fit text-5xl mx-2'>{checkOut.mDay}</h6>
                             <div className='flex flex-col'>
                                 <p className='w-fit text-sm'>{checkOut.month}  {checkOut.year}</p>
@@ -70,12 +67,13 @@ const DateBooking = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='p-5 m-auto lg:w-1/4 flex justify-center  border-r border-primary'>
-                        <NoOfPeople PeopleB={getPeople}/>
+
+                    <div className='w-full  mx-auto lg:w-1/4 flex lg:items-center justify-center  border-b lg:border-r lg:border-b-0 border-primary'>
+                        <NoOfPeople PeopleB={getPeople} />
                     </div>
-                    <div className=' lg:w-1/4 flex justify-center'>
-                        <div className=' p-5 flex m-auto h-full items-center justify-center'>
-                            <button className=' bg-active text-primary p-2 px-5 rounded-[25rem] lg:w-[10rem] hover:bg-opacity-90 active:bg-opacity-80 '>
+                    <div className='w-full lg:w-1/4 flex justify-center items-center'>
+                        <div className='w-full p-5 flex m-auto h-full items-center justify-center'>
+                            <button className=' bg-active text-primary p-2 px-5 rounded-[25rem] w-[80%] max-w-[15rem] hover:bg-opacity-90 active:bg-opacity-80 '>
                                 Book Now
                             </button>
                         </div>
@@ -84,6 +82,8 @@ const DateBooking = () => {
                 </div>
                 <SelectDate checkInDate={CheckInDate} iType={ItemType} getData={getNewData} />
             </div>
+            <div className='bg-primary relative z-[1] rounded-b-lg w-0 lg:w-[95%] m-auto h-4 shadow-gray-900 shadow-lg'></div>
+            <div className='bg-primary relative z-0 rounded-b-lg w-0 lg:w-[80%] m-auto h-4 shadow-lg'></div>
         </>
     )
 }

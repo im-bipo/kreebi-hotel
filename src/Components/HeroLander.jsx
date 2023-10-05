@@ -4,13 +4,13 @@ import DateBooking from './BookingFeature/DateBooking'
 const HeroLander = () => {
   return (
     <>
-      <div className=' bg-[url("./assets/images/main-banner.jpg")] bg-cover lg:bg-center  bg-no-repeat pt-20 text-white p-5' >
+      <div className=' bg-[url("./assets/images/main-banner.jpg")]  bg-cover bg-[-12rem] sm:bg-[0] lg:bg-center  bg-no-repeat pt-20 text-white p-5' >
         <div className='md:m-20 lg:mb-14'>
 
-          <h1 className='w-[5rem] text-[3rem] font-[200]'>
+          <h1 className='w-[5rem] text-[4rem] font-[200]'>
             Exclusive Boutique Hotel
           </h1>
-          <p className='font-thin text-[.9rem] my-5'>
+          <p className='font-thin text-[1rem] my-5'>
             Luxry Botuque hotel
           </p>
           <div className='flex space-x-4'>
