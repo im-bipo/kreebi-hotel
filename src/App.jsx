@@ -7,23 +7,22 @@ import ResturantAndBar from './Components/ResturantAndBar'
 
 const App = () => {
   return (
-    <div>
+    <>
+    <header>
       <NavBar />
+    </header>
+    <main>
       <HeroLander />
+    </main>
+    <section>
       <AboutUs/>
       <Spa/>
       <ResturantAndBar/>
-      <div className='h-[32rem] bg-blue-300'></div>
-      <div className='h-[32rem] bg-blue-200'>
+    </section>
+    <footer>
 
-      </div>
-      <div className='h-[32rem] bg-blue-300'>Restruant and Bar</div>
-      <div className='h-[32rem] bg-blue-200'>Advntages</div>
-      <div className='h-[32rem] bg-blue-300'>Rooms</div>
-      <div className='h-[32rem] bg-blue-200'>meter</div>
-      <div className='h-[32rem] bg-blue-300'>testimonial</div>
-      <div className='h-[32rem] bg-blue-200'>footer</div>
-    </div>
+    </footer>
+    </>
   )
 }
 
