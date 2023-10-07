@@ -2,54 +2,28 @@ import React, { useState,useEffect } from 'react'
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css'
 const SelectDate = (props) => {
-    const ItemType = props.iType
-    const CheckInDate = props.checkInDate
-
-    const today = new Date
-    const [dateError, setDateError] = useState('')
-    const [startDate, setStartDate] = useState(new Date());
+    const checkState = props.iType
+    const minDate = props.minDate
+    // const minDate = props.minDate
     
-    //callback function to send new date to parent element
-    const handleChange = (date) =>{
-        switch(ItemType)
-        {
-            case 'Check Out' :
-            if(CheckInDate<= date){
-                setStartDate(date)
-            }
-            else{
-                setDateError('!!! Invalid Date !!!')
-            }
-            break;
-        
-        
-            case 'Check In' :
-                if(today.getMonth()*100+today.getDate()<=date.getMonth()*100+date.getDate())
-                {
-                    setStartDate(date)
-                }
-                else{
-                    setDateError('!!! Invalid Date !!!')
-                }
-        }
-    }
+    const [newDate, setnewDate] = useState();
+
     
     useEffect(
         () => {
+            props.getData(checkState , newDate);
             removeDatePicker();
-        }, [startDate])
+        }, [newDate])
         
         
         const removeDatePicker = () => {
             document.getElementById('DatePickerContainer').classList.add('hidden')
-            setDateError('')
             //to reset type of item so we can reselect the same element
 
-            props.getData(ItemType , startDate);
     }
 
     //open date picker when user click on date 
-    if (ItemType){
+    if (checkState){
             document.getElementById('DatePickerContainer').classList.remove('hidden')
     }
   return (
@@ -61,14 +35,13 @@ const SelectDate = (props) => {
                         </div>
                         <div className='relative  bottom-5 cursor-pointer'>
                            <p>
-                             Select your {ItemType} date 
-                            </p>
-                            <p className='text-center text-[red]'>
-                             {dateError}
+                             Select your {checkState} date 
                             </p>
                         </div>
                         <DatePicker
-                            onChange={(date) => handleChange(date)}
+                            minDate={minDate}
+                            // onClick={handleAction}
+                            onChange={(date) => setnewDate(date)}
                             inline
                         />
                     </div>
