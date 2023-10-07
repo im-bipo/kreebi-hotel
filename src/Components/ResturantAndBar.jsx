@@ -43,11 +43,6 @@ const AboutUs = () => {
                     </div>
                     <div className='w-[70%] shadow-lg rounded-b-3xl h-5 bg-gray-200 m-auto relative z-0 bottom-3'>
                     </div>
-
-                    <div id="bookingP" className='flex justify-end'>
-                        
-                            <img src={food} width='150rem' alt="" className='rounded-lg object-cover bg-gray-50 shadow-lg relative z-10 bottom-64 right-3 h-40 text-center text-gray-600  lg:left-5' />
-                    </div>
                 </div>
 
 
