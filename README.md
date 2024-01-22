@@ -4,12 +4,12 @@
 
 ## Description
 
-Welcome to KREEBI HOTEL – a modern hotel website designed using React and styled with TypeScript. This project focuses on delivering a sleek and user-friendly frontend for a hotel website, providing a seamless experience for potential guests.
+Welcome to KREEBI HOTEL – a modern hotel website designed using React and styled with TAILWIND. This project focuses on delivering a sleek and user-friendly frontend for a hotel website, providing a seamless experience for potential guests.
 
 ## Features
 
 - **React Components**: Utilizes the power of React for a modular and maintainable codebase.
-- **TAILDWIND CSS Styling**: Styling is done with TAILDWIND.
+- **TAILWIND CSS Styling**: Styling is done with TAILWIND.
 - **Responsive Design**: The website is designed to be responsive, providing an optimal viewing experience across various devices.
 
 ## Live Demo
