@@ -25,7 +25,6 @@ const PlayPause = () => {
                 <FaPause />
             </div>
         )
-        break;
     }
     
     case 'pause':
@@ -35,7 +34,6 @@ const PlayPause = () => {
                     <FaPlay />
             </div>
         )
-        break;
     }
 }
 }

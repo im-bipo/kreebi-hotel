@@ -4,6 +4,7 @@ import HeroLander from './Components/HeroLander'
 import AboutUs from './Components/AboutUs'
 import Spa from './Components/Spa'
 import ResturantAndBar from './Components/ResturantAndBar'
+import Footer from './Components/Footer/Footer'
 
 const App = () => {
   return (
@@ -19,9 +20,7 @@ const App = () => {
       <Spa/>
       <ResturantAndBar/>
     </section>
-    <footer>
-
-    </footer>
+    <Footer/>
     </>
   )
 }

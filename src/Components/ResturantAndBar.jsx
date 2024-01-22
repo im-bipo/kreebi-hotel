@@ -1,10 +1,10 @@
 import React from 'react'
-import VideoPlaceholder from '../assets/images/hotelPlaceHolder.avif'
+// import VideoPlaceholder from '../assets/images/hotelPlaceHolder.avif'
 import { IoRestaurantOutline } from "react-icons/io5";
 import { GiHamburger } from "react-icons/gi";
 import resturantImg from '../assets/images/resturants.avif'
-import food from '../assets/images/food.avif'
-import PlayPause from './AboutUsFeatures/PlayPause';
+// import food from '../assets/images/food.avif'
+// import PlayPause from './AboutUsFeatures/PlayPause';
 const AboutUs = () => {
 
     return (
@@ -30,7 +30,7 @@ const AboutUs = () => {
                     </div>
 
                     <div id="controls" className=' flex items-center p-5 bg-gray-50 h-24 rounded-b-[25px] relative z-[2] shadow-lg'>
-                        <div onClick={() => ControlButton('play')} className='p-4 rounded-full text-white  bg-primary w-fit'>
+                        <div className='p-4 rounded-full text-white  bg-primary w-fit'>
                             <GiHamburger />
                         </div>
                         <div className='pl-3'>
